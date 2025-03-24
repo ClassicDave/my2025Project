@@ -9,5 +9,13 @@ class AliasApplication
 @Suppress("SpreadOperator")
 fun main(args: Array<String>) {
     runApplication<AliasApplication>(*args)
+    val teamService = TeamService()
+    val gameResultsService = GameResultsService()
+    
+    // Load previous data
+    teamService.loadTeams()
+    gameResultsService.loadGameHistory()
+    
+    println("Previous game data loaded successfully!")
 }
 
